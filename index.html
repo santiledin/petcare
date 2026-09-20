@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Metadata -->
+    <title>PetCare: Control de Mascotas – Sitio Oficial y Política de Privacidad</title>
+    <meta name="description" content="Sitio web oficial y política de privacidad de PetCare: Control de Mascotas para Android. Gestión integral de vacunas, medicamentos, peso y gastos. 100% offline y privado." />
+    <meta name="keywords" content="PetCare, control de mascotas, vacunas perros gatos, lemintosdev, salud mascotas offline, carnet vacunas android, registro medicamentos veterinario" />
+    <meta name="author" content="LemitosDev" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://lemitosdev.github.io/petcare/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PetCare: Control de Mascotas – Sitio Oficial y Política de Privacidad" />
+    <meta property="og:description" content="El cuidado integral y la salud de tus mascotas en la palma de tu mano. 100% privado, local y sin registros. Desarrollado por LemitosDev." />
+    <meta property="og:site_name" content="PetCare Mascotas" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PetCare: Control de Mascotas – Sitio Oficial" />
+    <meta name="twitter:description" content="Control de vacunas, medicamentos, peso y gastos veterinarios. 100% offline y sin suscripciones para Android." />
+
+    <!-- Google Fonts: Outfit (Headings) + Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Google Material Symbols Rounded & Outlined -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Tailwind CSS CDN (v3.4) for standalone deployment -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#f0f6f3',
+                100: '#ddece4',
+                200: '#bed9cd',
+                300: '#94beaf',
+                400: '#699e8d',
+                500: '#4e7d6b', // secondary
+                600: '#356453', // primary
+                700: '#2b5143',
+                800: '#244237',
+                900: '#1e372e',
+                950: '#0f201a',
+              },
+              appbg: '#f8f9ff',
+              surface: '#eff4ff',
+              darktext: '#121c2a',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(53, 100, 83, 0.08)',
+              'card': '0 4px 20px -2px rgba(18, 28, 42, 0.06), 0 2px 6px -1px rgba(18, 28, 42, 0.04)',
+              'float': '0 20px 40px -15px rgba(53, 100, 83, 0.22)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS for polish and animations -->
+    <style>
+      .material-symbols-rounded {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(226, 237, 231, 0.8);
+      }
+      .device-screen-shadow {
+        box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.04);
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f8f9ff;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #bed9cd;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4e7d6b;
+      }
+    </style>
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "PetCare: Control de Mascotas",
+      "operatingSystem": "Android",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "Pet Health Tracker",
+      "description": "Control integral de salud para mascotas: carnet de vacunas, medicamentos, peso, desparasitaciones y gastos. Funcionalidad 100% offline y privada.",
+      "author": {
+        "@type": "Person",
+        "name": "LemitosDev"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "softwareVersion": "1.0.0",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.lemitosdev.petcare"
+    }
+    </script>
+  </head>
+
+  <body class="bg-appbg text-darktext font-sans antialiased selection:bg-brand-200 selection:text-brand-900">
+    <!-- Toast Notification for clipboard -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2 bg-brand-600 text-white px-5 py-3 rounded-2xl shadow-float text-sm font-medium">
+      <span class="material-symbols-rounded text-lg">check_circle</span>
+      <span id="toast-message">Texto copiado al portapapeles</span>
+    </div>
+
+    <!-- 1. HEADER / NAVBAR -->
+    <header id="header" class="sticky top-0 z-40 w-full transition-all duration-300 bg-appbg/90 backdrop-blur-md border-b border-brand-100/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- Logo & Brand Name -->
+          <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="PetCare Inicio">
+            <div class="w-11 h-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center shadow-md shadow-brand-600/20 group-hover:scale-105 transition-transform duration-200">
+              <!-- Paw inside Heart SVG Brand Logo matching logo.png -->
+              <svg class="w-6 h-6 fill-current" viewBox="0 0 100 100">
+                <path d="M50 88.5C48.2 88.5 46.5 87.8 45.2 86.6C26.8 69.8 14 55.4 14 38.5C14 24.8 24.8 14 38.5 14C45.3 14 50 18.2 50 18.2C50 18.2 54.7 14 61.5 14C75.2 14 86 24.8 86 38.5C86 55.4 73.2 69.8 54.8 86.6C53.5 87.8 51.8 88.5 50 88.5Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Central Paw Pad -->
+                <ellipse cx="50" cy="56" rx="8" ry="6.5" />
+                <!-- 4 Toes -->
+                <circle cx="41" cy="44" r="3.6" />
+                <circle cx="47" cy="38" r="3.6" />
+                <circle cx="53" cy="38" r="3.6" />
+                <circle cx="59" cy="44" r="3.6" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="font-display font-bold text-2xl tracking-tight text-darktext">PetCare</span>
+                <span class="w-2 h-2 rounded-full bg-brand-500 inline-block"></span>
+              </div>
+              <span class="text-[11px] font-semibold text-brand-600 uppercase tracking-wider">Por LemitosDev</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Links -->
+          <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600" aria-label="Navegación principal">
+            <a href="#caracteristicas" class="hover:text-brand-600 transition-colors py-1">Características</a>
+            <a href="#seguridad" class="hover:text-brand-600 transition-colors py-1">Seguridad Offline</a>
+            <a href="#privacidad" class="hover:text-brand-600 transition-colors py-1">Políticas de Privacidad</a>
+            <a href="#faq" class="hover:text-brand-600 transition-colors py-1">Preguntas Frecuentes</a>
+            <a href="#contacto" class="hover:text-brand-600 transition-colors py-1">Contacto</a>
+          </nav>
+
+          <!-- Desktop CTA Button -->
+          <div class="hidden md:flex items-center gap-3">
+            <a href="#descarga" id="nav-download-btn" class="inline-flex items-center gap-2.5 bg-brand-600 hover:bg-brand-700 text-white font-medium text-sm px-5 py-2.5 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200" title="Descargar en Google Play">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.22 2.22 0 0 1-.61-1.565V3.379c0-.58.22-1.12.61-1.565zm11.3 11.3l2.455 2.455-11.83 6.746 9.375-9.201zm0-2.228L5.534 1.685l11.83 6.746-2.455 2.455zm1.12 1.114l3.52-2.006a1.5 1.5 0 0 1 0 2.61l-3.52 2.006-1.565-1.305 1.565-1.305z"/>
+              </svg>
+              <span>Google Play</span>
+            </a>
+          </div>
+
+          <!-- Mobile Hamburger Button -->
+          <div class="flex md:hidden items-center">
+            <button id="mobile-menu-toggle" type="button" class="p-2.5 rounded-xl text-darktext hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Abrir menú de navegación" aria-expanded="false">
+              <span id="menu-icon-open" class="material-symbols-rounded text-28">menu</span>
+              <span id="menu-icon-close" class="material-symbols-rounded text-28 hidden">close</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-b border-brand-100 bg-white/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-2 shadow-lg">
+        <a href="#caracteristicas" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">Características</a>
+        <a href="#seguridad" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">Seguridad Offline</a>
+        <a href="#privacidad" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">Políticas de Privacidad</a>
+        <a href="#faq" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">Preguntas Frecuentes</a>
+        <a href="#contacto" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600 transition-colors">Contacto</a>
+        <div class="pt-2">
+          <a href="#descarga" class="flex items-center justify-center gap-2.5 w-full bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-3 rounded-2xl shadow-sm">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.22 2.22 0 0 1-.61-1.565V3.379c0-.58.22-1.12.61-1.565zm11.3 11.3l2.455 2.455-11.83 6.746 9.375-9.201zm0-2.228L5.534 1.685l11.83 6.746-2.455 2.455zm1.12 1.114l3.52-2.006a1.5 1.5 0 0 1 0 2.61l-3.52 2.006-1.565-1.305 1.565-1.305z"/>
+            </svg>
+            <span>Descargar en Google Play</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="relative pt-8 pb-20 md:pt-14 md:pb-28 overflow-hidden">
+      <!-- Decorative background blur orbs -->
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-brand-100/50 via-surface to-brand-50/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Column: Copy & CTAs -->
+          <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+            
+            <!-- Trust badges / Pills -->
+            <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-100/80 text-brand-800 text-xs font-semibold tracking-wide border border-brand-200">
+                <span class="material-symbols-rounded text-sm text-brand-600">verified_user</span>
+                100% Privado y Offline
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-semibold tracking-wide border border-emerald-200">
+                <span class="material-symbols-rounded text-sm text-emerald-600">savings</span>
+                Sin Suscripciones
+              </span>
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-800 text-xs font-semibold tracking-wide border border-sky-200">
+                <span class="material-symbols-rounded text-sm text-sky-600">notifications_active</span>
+                Alertas Exactas
+              </span>
+            </div>
+
+            <!-- High Impact Headline -->
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-darktext tracking-tight leading-[1.15]">
+              El cuidado integral y la salud de tus mascotas, <span class="text-brand-600 underline decoration-brand-200 decoration-wavy decoration-2 underline-offset-8">en la palma de tu mano.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+              Control de vacunas, peso, medicamentos, desparasitaciones y gastos. 100% privado, sin registros y totalmente funcional sin conexión a internet.
+            </p>
+
+            <!-- CTA Actions & Google Play Badge -->
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <!-- Official Store CTA -->
+              <a href="#descarga" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-darktext hover:bg-slate-800 text-white px-6 py-3.5 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
+                <svg class="w-6 h-6 fill-current text-brand-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                  <path d="M3.609 1.814L13.792 12 3.61 22.186a2.22 2.22 0 0 1-.61-1.565V3.379c0-.58.22-1.12.61-1.565zm11.3 11.3l2.455 2.455-11.83 6.746 9.375-9.201zm0-2.228L5.534 1.685l11.83 6.746-2.455 2.455zm1.12 1.114l3.52-2.006a1.5 1.5 0 0 1 0 2.61l-3.52 2.006-1.565-1.305 1.565-1.305z"/>
+                </svg>
+                <div class="text-left">
+                  <div class="text-[10px] uppercase tracking-wider text-slate-300 font-medium">DISPONIBLE EN</div>
+                  <div class="text-base font-semibold leading-tight font-display">Google Play</div>
+                </div>
+              </a>
+
+              <!-- Secondary Jump to Privacy Policy -->
+              <a href="#privacidad" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-brand-50 text-brand-700 border border-brand-200 font-medium px-6 py-3.5 rounded-2xl shadow-sm hover:shadow transition-all duration-200">
+                <span class="material-symbols-rounded text-lg">shield</span>
+                <span>Políticas de Privacidad</span>
+              </a>
+            </div>
+
+            <!-- Transparency notice -->
+            <div class="pt-2 flex items-center justify-center lg:justify-start gap-4 text-xs text-slate-500">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>Android 8.0 o superior</span>
+              </div>
+              <span>•</span>
+              <div class="flex items-center gap-1.5">
+                <span class="material-symbols-rounded text-sm text-slate-400">cloud_off</span>
+                <span>Cero servidores en la nube</span>
+              </div>
+              <span>•</span>
+              <span>v1.0.0</span>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive Smartphone Mockup with Real App Screens -->
+          <div class="lg:col-span-5 relative flex justify-center items-center">
+            
+            <!-- Floating Card: Vaccine Up-to-date -->
+            <div class="absolute -top-4 -left-6 sm:-left-10 z-20 hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-float border border-brand-100 animate-bounce duration-1000" style="animation-duration: 4s;">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                <span class="material-symbols-rounded text-xl">vaccines</span>
+              </div>
+              <div class="text-left pr-2">
+                <p class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Vacuna al día</p>
+                <p class="text-xs font-bold text-darktext">Rabia Canina • Refuerzo 2027</p>
+              </div>
+            </div>
+
+            <!-- Floating Card: Medication Dose -->
+            <div class="absolute top-1/2 -right-6 sm:-right-8 z-20 hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-float border border-brand-100">
+              <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center">
+                <span class="material-symbols-rounded text-xl">medication</span>
+              </div>
+              <div class="text-left pr-2">
+                <p class="text-[11px] font-semibold text-sky-700 uppercase tracking-wider">Próxima dosis 20:00</p>
+                <p class="text-xs font-bold text-darktext">Amoxicilina 250mg (Zeus)</p>
+              </div>
+            </div>
+
+            <!-- Floating Card: 100% Offline Local -->
+            <div class="absolute -bottom-6 left-2 sm:left-4 z-20 hidden sm:flex items-center gap-3 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-float border border-brand-100">
+              <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                <span class="material-symbols-rounded text-xl">phonelink_lock</span>
+              </div>
+              <div class="text-left pr-2">
+                <p class="text-[11px] font-semibold text-brand-700 uppercase tracking-wider">Bóveda Local</p>
+                <p class="text-xs font-bold text-darktext">Tus datos nunca salen del teléfono</p>
+              </div>
+            </div>
+
+            <!-- Smartphone Frame (Pixel Style) -->
+            <div class="relative w-[290px] sm:w-[320px] bg-slate-900 rounded-[44px] p-3 shadow-2xl ring-1 ring-slate-800/80">
+              <!-- Speaker & Camera notch bar -->
+              <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-4 bg-slate-900 rounded-full flex items-center justify-center z-30">
+                <div class="w-2.5 h-2.5 rounded-full bg-slate-950 ring-2 ring-slate-800"></div>
+              </div>
+
+              <!-- Inner Device Screen -->
+              <div class="relative w-full bg-[#f8f9ff] rounded-[36px] overflow-hidden flex flex-col h-[580px] text-left select-none text-slate-800">
+                
+                <!-- Android Status Bar -->
+                <div class="pt-3 px-5 pb-2 flex justify-between items-center text-[10px] font-medium text-slate-500 bg-[#f8f9ff]">
+                  <span>9:41</span>
+                  <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-rounded text-xs">signal_cellular_alt</span>
+                    <span class="material-symbols-rounded text-xs">wifi</span>
+                    <span class="material-symbols-rounded text-xs">battery_full</span>
+                  </div>
+                </div>
+
+                <!-- App Top Bar (As seen in real screenshot) -->
+                <div class="px-4 py-2 flex items-center justify-between border-b border-slate-100 bg-[#f8f9ff]">
+                  <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xs">
+                      <span class="material-symbols-rounded text-sm">pets</span>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-1">
+                        <span class="font-display font-bold text-sm text-darktext">PetCare</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-500"></span>
+                      </div>
+                      <span id="screen-title" class="text-[10px] text-slate-400 block -mt-0.5">Inicio</span>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-center gap-2">
+                    <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-200/80 text-[10px] font-medium text-slate-600">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      Offline
+                    </span>
+                    <div class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center">
+                      <span class="material-symbols-rounded text-xs">person</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Interactive App Screen Content Container -->
+                <div id="phone-screen-container" class="flex-1 overflow-y-auto px-4 py-3 space-y-3.5 text-xs">
+                  
+                  <!-- SCREEN 1: DASHBOARD / ZEUS (Default) -->
+                  <div id="screen-dashboard" class="space-y-3">
+                    <!-- Greeting banner -->
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <h4 class="font-display font-bold text-base text-darktext flex items-center gap-1">Hola 👋</h4>
+                        <p class="text-[11px] text-slate-500">Tu panel de cuidado diario</p>
+                      </div>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium">
+                        • Sin eventos pendientes
+                      </span>
+                    </div>
+
+                    <!-- Pet selector pill -->
+                    <div class="flex items-center gap-2">
+                      <div class="inline-flex items-center gap-1.5 bg-brand-600 text-white px-3 py-1.5 rounded-xl text-xs font-semibold shadow-sm">
+                        <span class="w-4 h-4 rounded-full bg-white/20 text-[9px] flex items-center justify-center">Z</span>
+                        <span>Zeus</span>
+                        <span class="material-symbols-rounded text-xs">check</span>
+                      </div>
+                      <div class="inline-flex items-center gap-1 bg-white border border-slate-200 text-slate-600 px-2.5 py-1.5 rounded-xl text-xs font-medium">
+                        <span class="material-symbols-rounded text-xs">add</span>
+                        <span>Nueva mascota</span>
+                      </div>
+                    </div>
+
+                    <!-- Zeus Main Profile Card (Matching Screenshot) -->
+                    <div class="bg-white rounded-2xl p-3.5 border border-slate-100 shadow-sm space-y-3">
+                      <div class="flex items-center gap-3">
+                        <div class="relative w-14 h-14 rounded-2xl bg-brand-600 text-white flex items-center justify-center text-xl font-display font-bold shadow-sm">
+                          Z
+                          <span class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-brand-500 text-white text-[10px] flex items-center justify-center border-2 border-white">
+                            🐾
+                          </span>
+                        </div>
+                        <div class="flex-1">
+                          <div class="flex items-center justify-between">
+                            <h5 class="font-display font-bold text-sm text-darktext">Zeus</h5>
+                            <span class="text-[10px] px-2 py-0.5 rounded-md bg-amber-50 text-amber-700 font-medium border border-amber-200">Pendiente</span>
+                          </div>
+                          <p class="text-[11px] text-slate-500">Perro • Bulldog Inglés</p>
+                        </div>
+                      </div>
+
+                      <div class="grid grid-cols-2 gap-2 pt-1 border-t border-slate-100">
+                        <div class="bg-[#eff4ff] rounded-xl p-2 flex items-center gap-2">
+                          <span class="material-symbols-rounded text-sm text-brand-600">cake</span>
+                          <div>
+                            <span class="text-[9px] text-slate-400 block">Edad</span>
+                            <span class="text-[11px] font-bold text-darktext">5 años, 8 m</span>
+                          </div>
+                        </div>
+                        <div class="bg-[#eff4ff] rounded-xl p-2 flex items-center gap-2">
+                          <span class="material-symbols-rounded text-sm text-brand-600">scale</span>
+                          <div>
+                            <span class="text-[9px] text-slate-400 block">Peso actual</span>
+                            <span class="text-[11px] font-bold text-darktext">28.3 kg</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Quick Actions Grid (Matching Screenshot) -->
+                    <div>
+                      <div class="flex items-center justify-between mb-1.5">
+                        <span class="font-display font-bold text-xs text-darktext">Acciones rápidas</span>
+                        <span class="text-[10px] text-brand-600 font-medium">Registro local</span>
+                      </div>
+                      <div class="grid grid-cols-4 gap-2">
+                        <div class="bg-white p-2 rounded-xl border border-slate-100 text-center flex flex-col items-center">
+                          <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-1">
+                            <span class="material-symbols-rounded text-base">scale</span>
+                          </div>
+                          <span class="text-[10px] font-medium text-slate-700">Peso</span>
+                        </div>
+                        <div class="bg-white p-2 rounded-xl border border-slate-100 text-center flex flex-col items-center">
+                          <div class="w-8 h-8 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center mb-1">
+                            <span class="material-symbols-rounded text-base">vaccines</span>
+                          </div>
+                          <span class="text-[10px] font-medium text-slate-700">Vacuna</span>
+                        </div>
+                        <div class="bg-white p-2 rounded-xl border border-slate-100 text-center flex flex-col items-center">
+                          <div class="w-8 h-8 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center mb-1">
+                            <span class="material-symbols-rounded text-base">payments</span>
+                          </div>
+                          <span class="text-[10px] font-medium text-slate-700">Gasto</span>
+                        </div>
+                        <div class="bg-white p-2 rounded-xl border border-slate-100 text-center flex flex-col items-center">
+                          <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center mb-1">
+                            <span class="material-symbols-rounded text-base">notifications</span>
+                          </div>
+                          <span class="text-[10px] font-medium text-slate-700">Aviso</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Upcoming events card -->
+                    <div class="bg-white rounded-xl p-2.5 border border-slate-100 flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center">
+                        <span class="material-symbols-rounded text-base">calendar_today</span>
+                      </div>
+                      <div class="flex-1">
+                        <span class="text-[10px] font-bold text-darktext block">Sin eventos próximos</span>
+                        <span class="text-[9px] text-slate-400">Agenda vacunas o controles médicos</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 2: MIS MASCOTAS (Switchable) -->
+                  <div id="screen-pets" class="space-y-3 hidden">
+                    <div class="flex items-center justify-between">
+                      <h4 class="font-display font-bold text-base text-darktext">Mis mascotas</h4>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 font-medium">Local Activo</span>
+                    </div>
+                    <p class="text-[11px] text-slate-500">Gestiona la información y registros locales</p>
+                    
+                    <div class="bg-white rounded-2xl p-3 border border-slate-100 shadow-sm space-y-2">
+                      <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                          <div class="w-10 h-10 rounded-xl bg-brand-600 text-white font-bold flex items-center justify-center text-sm">Z</div>
+                          <div>
+                            <div class="font-bold text-xs text-darktext">Zeus</div>
+                            <div class="text-[10px] text-slate-500">Bulldog Inglés • 28.3 kg</div>
+                          </div>
+                        </div>
+                        <span class="text-[10px] px-2 py-0.5 bg-slate-100 rounded-md font-medium text-slate-600">Perro</span>
+                      </div>
+                      <div class="flex gap-1.5 pt-1 text-[9px]">
+                        <span class="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 border border-emerald-100">No esterilizado</span>
+                        <span class="px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 border border-sky-100">Chip #84920</span>
+                      </div>
+                    </div>
+
+                    <button type="button" class="w-full py-2 bg-brand-600 text-white rounded-xl font-medium text-xs flex items-center justify-center gap-1.5 shadow-sm">
+                      <span class="material-symbols-rounded text-sm">add</span>
+                      <span>Agregar mascota</span>
+                    </button>
+                    
+                    <div class="p-2.5 bg-brand-50/80 rounded-xl border border-brand-100 text-[10px] text-brand-900 flex items-start gap-1.5">
+                      <span class="material-symbols-rounded text-sm text-brand-600">verified</span>
+                      <span>Los datos se conservan 100% seguros y accesibles en este dispositivo sin internet.</span>
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 3: CALENDARIO (Switchable) -->
+                  <div id="screen-calendar" class="space-y-3 hidden">
+                    <div class="flex items-center justify-between">
+                      <h4 class="font-display font-bold text-base text-darktext">Calendario</h4>
+                      <span class="text-[10px] text-brand-600 font-medium">Septiembre 2026</span>
+                    </div>
+                    <div class="bg-white rounded-2xl p-3 border border-slate-100 shadow-sm text-center">
+                      <div class="grid grid-cols-7 gap-1 text-[10px] font-bold text-slate-400 mb-2">
+                        <span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+                      </div>
+                      <div class="grid grid-cols-7 gap-1 text-[11px] text-slate-700">
+                        <span class="py-1 text-slate-300">31</span><span class="py-1">1</span><span class="py-1">2</span><span class="py-1">3</span><span class="py-1">4</span><span class="py-1">5</span><span class="py-1">6</span>
+                        <span class="py-1">7</span><span class="py-1">8</span><span class="py-1">9</span><span class="py-1">10</span><span class="py-1">11</span><span class="py-1">12</span><span class="py-1">13</span>
+                        <span class="py-1">14</span><span class="py-1">15</span><span class="py-1">16</span><span class="py-1">17</span><span class="py-1">18</span><span class="py-1">19</span>
+                        <span class="py-1 bg-brand-600 text-white rounded-lg font-bold shadow-sm">20</span>
+                        <span class="py-1">21</span><span class="py-1">22</span><span class="py-1">23</span><span class="py-1">24</span><span class="py-1">25</span><span class="py-1">26</span><span class="py-1">27</span>
+                        <span class="py-1">28</span><span class="py-1">29</span><span class="py-1">30</span>
+                      </div>
+                    </div>
+                    <div class="bg-white rounded-xl p-2.5 border border-slate-100 text-[10px] text-slate-500 text-center">
+                      Sin eventos en Septiembre. Toca + para agendar uno.
+                    </div>
+                  </div>
+
+                  <!-- SCREEN 4: AJUSTES (Switchable) -->
+                  <div id="screen-settings" class="space-y-3 hidden">
+                    <div class="flex items-center justify-between">
+                      <h4 class="font-display font-bold text-base text-darktext">Ajustes</h4>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium">v1.0.0</span>
+                    </div>
+                    <div class="bg-white rounded-xl p-2.5 border border-slate-100 space-y-2">
+                      <div class="flex items-center justify-between text-[11px]">
+                        <span class="font-medium text-slate-700">Tema</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-0.5 rounded text-slate-600">Claro</span>
+                      </div>
+                      <div class="flex items-center justify-between text-[11px]">
+                        <span class="font-medium text-slate-700">Unidad de peso</span>
+                        <span class="text-[10px] bg-brand-100 text-brand-800 px-2 py-0.5 rounded font-bold">KG</span>
+                      </div>
+                      <div class="flex items-center justify-between text-[11px]">
+                        <span class="font-medium text-slate-700">Notificaciones locales</span>
+                        <span class="w-7 h-4 bg-brand-600 rounded-full flex items-center justify-end px-0.5"><span class="w-3 h-3 rounded-full bg-white"></span></span>
+                      </div>
+                    </div>
+                    <div class="p-2.5 bg-brand-50 rounded-xl border border-brand-100 text-[10px] text-brand-900">
+                      <span class="font-bold block">Modelo 100% Gratuito</span>
+                      Hasta 3 anuncios diarios al realizar acciones clave. Sin suscripciones.
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Phone Bottom Navigation Bar (Matching Screenshot) -->
+                <div class="border-t border-slate-200/80 bg-white px-3 py-2 flex items-center justify-between text-[10px] font-medium text-slate-500">
+                  <button type="button" class="app-tab-btn flex flex-col items-center gap-0.5 text-brand-600 focus:outline-none" data-target="dashboard">
+                    <span class="material-symbols-rounded text-lg">pets</span>
+                    <span class="text-[9px]">Inicio</span>
+                  </button>
+                  <button type="button" class="app-tab-btn flex flex-col items-center gap-0.5 hover:text-brand-600 focus:outline-none" data-target="pets">
+                    <span class="material-symbols-rounded text-lg">cruelty_free</span>
+                    <span class="text-[9px]">Mascotas</span>
+                  </button>
+                  <button type="button" class="app-tab-btn flex flex-col items-center gap-0.5 hover:text-brand-600 focus:outline-none" data-target="calendar">
+                    <span class="material-symbols-rounded text-lg">calendar_month</span>
+                    <span class="text-[9px]">Calendario</span>
+                  </button>
+                  <button type="button" class="app-tab-btn flex flex-col items-center gap-0.5 hover:text-brand-600 focus:outline-none" data-target="settings">
+                    <span class="material-symbols-rounded text-lg">settings</span>
+                    <span class="text-[9px]">Ajustes</span>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CARACTERÍSTICAS PRINCIPALES (Grid Interactivo con Glassmorphism) -->
+    <section id="caracteristicas" class="py-20 bg-white/70 border-y border-brand-100/70 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider border border-brand-200">
+            <span class="material-symbols-rounded text-sm">tune</span>
+            Herramientas Completas
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-darktext tracking-tight">
+            Todo lo que necesitas para el bienestar de tus compañeros
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600">
+            Diseñado pensando en la facilidad de uso diario, sin complicaciones de cuentas y con la tranquilidad de que tus datos nunca abandonan tu dispositivo.
+          </p>
+        </div>
+
+        <!-- 6 Feature Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          
+          <!-- Card 1: Carnet de Vacunación & Desparasitación -->
+          <div class="glass-card rounded-3xl p-7 shadow-card hover:shadow-float hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600 group-hover:text-white transition-all duration-300">
+                <span class="text-2xl">🩺</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-darktext group-hover:text-brand-600 transition-colors">
+                Carnet de Vacunación & Desparasitación
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Registra fechas de aplicación, números de lote, marcas y veterinarios. Visualiza de inmediato si tu mascota está al día o tiene dosis pendientes para evitar olvidos peligrosos.
+              </p>
+            </div>
+            <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-brand-700 font-semibold">
+              <span>Control sanitario total</span>
+              <span class="material-symbols-rounded text-base">check_circle</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Registro de Medicamentos -->
+          <div class="glass-card rounded-3xl p-7 shadow-card hover:shadow-float hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-600 group-hover:text-white transition-all duration-300">
+                <span class="text-2xl">💊</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-darktext group-hover:text-brand-600 transition-colors">
+                Registro de Medicamentos
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Historial completo de tratamientos activos y finalizados. Define posología, dosis exactas (gotas, pastillas, ml) y duración para antibióticos o medicamentos crónicos.
+              </p>
+            </div>
+            <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-sky-700 font-semibold">
+              <span>Tratamientos puntuales</span>
+              <span class="material-symbols-rounded text-base">medication_liquid</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Gráficos de Peso & Gastos -->
+          <div class="glass-card rounded-3xl p-7 shadow-card hover:shadow-float hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
+                <span class="text-2xl">⚖️</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-darktext group-hover:text-brand-600 transition-colors">
+                Gráficos de Peso & Gastos
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Monitorea la evolución física de tu mascota a lo largo del tiempo y categoriza tus finanzas (veterinario, alimentación, medicamentos, accesorios) para un presupuesto claro.
+              </p>
+            </div>
+            <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-amber-700 font-semibold">
+              <span>Evolución y presupuesto</span>
+              <span class="material-symbols-rounded text-base">query_stats</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Alarmas y Notificaciones Locales -->
+          <div class="glass-card rounded-3xl p-7 shadow-card hover:shadow-float hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                <span class="text-2xl">⏰</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-darktext group-hover:text-brand-600 transition-colors">
+                Alarmas y Notificaciones Locales
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Recordatorios que suenan a la hora exacta mediante el administrador de alarmas del sistema Android. Funcionan con precisión absoluta, incluso con la aplicación cerrada y sin internet.
+              </p>
+            </div>
+            <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-emerald-700 font-semibold">
+              <span>Alertas sin internet</span>
+              <span class="material-symbols-rounded text-base">alarm_on</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Bóveda de Documentos -->
+          <div class="glass-card rounded-3xl p-7 shadow-card hover:shadow-float hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
+                <span class="text-2xl">📁</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-darktext group-hover:text-brand-600 transition-colors">
+                Bóveda de Documentos
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Guarda fotos de recetas veterinarias, análisis de sangre y certificados de pedigree. Los archivos quedan archivados en el almacenamiento interno de tu móvil sin ser compartidos.
+              </p>
+            </div>
+            <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-purple-700 font-semibold">
+              <span>Almacenamiento interno</span>
+              <span class="material-symbols-rounded text-base">folder_special</span>
+            </div>
+          </div>
+
+          <!-- Card 6: Multi-mascota -->
+          <div class="glass-card rounded-3xl p-7 shadow-card hover:shadow-float hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center group-hover:scale-110 group-hover:bg-teal-600 group-hover:text-white transition-all duration-300">
+                <span class="text-2xl">🐾</span>
+              </div>
+              <h3 class="font-display font-bold text-xl text-darktext group-hover:text-brand-600 transition-colors">
+                Gestión Multi-mascota
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Crea perfiles independientes para perros, gatos, conejos u otras mascotas. Personaliza razas, número de microchip, estado de esterilización y mantén cada historial separado.
+              </p>
+            </div>
+            <div class="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs text-teal-700 font-semibold">
+              <span>Perfiles ilimitados</span>
+              <span class="material-symbols-rounded text-base">pets</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SECCIÓN DE SEGURIDAD Y FILOSOFÍA OFFLINE -->
+    <section id="seguridad" class="py-20 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="bg-gradient-to-br from-brand-900 to-brand-800 text-white rounded-[40px] p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden">
+          
+          <!-- Background accent glow -->
+          <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <div class="lg:col-span-7 space-y-6">
+              <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 text-brand-200 text-xs font-semibold backdrop-blur-md border border-white/10">
+                <span class="material-symbols-rounded text-sm">lock</span>
+                Privacidad por Diseño
+              </div>
+
+              <h2 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
+                ¿Por qué PetCare es diferente? Tus datos pertenecen <span class="text-brand-300">solo a tu teléfono.</span>
+              </h2>
+
+              <p class="text-base sm:text-lg text-slate-200 font-light leading-relaxed">
+                En un mundo donde la mayoría de aplicaciones exigen cuentas obligatorias y suben información privada a servidores de terceros, PetCare adopta una filosofía radical de <strong class="text-white font-medium">privacidad local</strong>.
+              </p>
+
+              <!-- Highlights list -->
+              <div class="space-y-4 pt-2">
+                
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/10 text-brand-300 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-rounded">no_accounts</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-white">Sin cuentas ni contraseñas</h4>
+                    <p class="text-sm text-slate-300">No solicitamos tu correo, no creas contraseñas y no hay perfiles en la red. Abres la app y comienzas a cuidar a tus mascotas al instante.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/10 text-brand-300 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-rounded">cloud_off</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-white">Cero servidores en la nube</h4>
+                    <p class="text-sm text-slate-300">LemitosDev no opera servidores centrales que guarden historiales clínicos, fotos o finanzas. La base de datos vive exclusivamente en la memoria interna de tu teléfono.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/10 text-brand-300 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-rounded">offline_pin</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-white">Total autonomía sin conexión</h4>
+                    <p class="text-sm text-slate-300">¿Estás en el veterinario en una zona sin cobertura, en el campo o viajando? Toda la información está siempre disponible al 100%.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-white/10 text-brand-300 flex items-center justify-center shrink-0 mt-0.5">
+                    <span class="material-symbols-rounded">file_download</span>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-base text-white">Copia de seguridad en tus manos</h4>
+                    <p class="text-sm text-slate-300">Genera una copia de seguridad JSON cuando desees para guardarla en tu almacenamiento personal y restaurarla en otro móvil sin intermediarios.</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Right Column: Comparison Card -->
+            <div class="lg:col-span-5">
+              <div class="bg-white text-darktext rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                  <h3 class="font-display font-bold text-lg text-darktext">Comparativa de Seguridad</h3>
+                  <span class="px-2.5 py-1 rounded-full bg-brand-100 text-brand-800 text-[11px] font-bold">Arquitectura</span>
+                </div>
+
+                <div class="space-y-4 text-xs sm:text-sm">
+                  <div class="flex items-center justify-between py-2 border-b border-slate-100">
+                    <span class="text-slate-500">Creación de cuenta obligatoria</span>
+                    <span class="font-bold text-emerald-600 flex items-center gap-1">
+                      <span class="material-symbols-rounded text-base">close</span> NO (Inmediato)
+                    </span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-2 border-b border-slate-100">
+                    <span class="text-slate-500">Historial médico en la nube</span>
+                    <span class="font-bold text-emerald-600 flex items-center gap-1">
+                      <span class="material-symbols-rounded text-base">close</span> NUNCA (100% Local)
+                    </span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-2 border-b border-slate-100">
+                    <span class="text-slate-500">Venta o rastreo de datos personales</span>
+                    <span class="font-bold text-emerald-600 flex items-center gap-1">
+                      <span class="material-symbols-rounded text-base">close</span> CERO rastreo
+                    </span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-2 border-b border-slate-100">
+                    <span class="text-slate-500">Uso sin acceso a internet</span>
+                    <span class="font-bold text-emerald-600 flex items-center gap-1">
+                      <span class="material-symbols-rounded text-base">check</span> 100% Funcional
+                    </span>
+                  </div>
+
+                  <div class="flex items-center justify-between py-2">
+                    <span class="text-slate-500">Suscripciones mensuales</span>
+                    <span class="font-bold text-emerald-600 flex items-center gap-1">
+                      <span class="material-symbols-rounded text-base">close</span> $0 / Totalmente Gratis
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-3.5 bg-[#f8f9ff] rounded-2xl border border-brand-100 text-xs text-slate-600">
+                  <p class="font-semibold text-brand-800 mb-1 flex items-center gap-1.5">
+                    <span class="material-symbols-rounded text-base text-brand-600">volunteer_activism</span>
+                    Sostenibilidad Ética
+                  </p>
+                  Financiado exclusivamente con hasta 3 anuncios diarios respetuosos de Google AdMob. Sin cobros ocultos ni banners invasivos.
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SECCIÓN COMPLETA DE POLÍTICA DE PRIVACIDAD (Google Play Compliant) -->
+    <section id="privacidad" class="py-20 bg-white border-y border-brand-100/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 text-brand-800 text-xs font-bold uppercase tracking-wider border border-brand-200">
+            <span class="material-symbols-rounded text-sm">gavel</span>
+            Documentación Legal Oficial
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-darktext tracking-tight">
+            Política de Privacidad de PetCare
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Cumplimiento riguroso con los lineamientos de Google Play Store, RGPD / GDPR y principios de transparencia en el tratamiento de datos personales.
+          </p>
+          <div class="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500">
+            <span class="px-2.5 py-1 bg-slate-100 rounded-md font-mono">com.lemitosdev.petcare</span>
+            <span>•</span>
+            <span>Desarrollador: <strong>LemitosDev</strong></span>
+            <span>•</span>
+            <span class="text-brand-700 font-semibold">Última actualización: Septiembre 2026</span>
+          </div>
+        </div>
+
+        <!-- Privacy Policy Card / Reader -->
+        <div class="bg-appbg rounded-3xl p-6 sm:p-10 lg:p-12 border border-slate-200 shadow-sm space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
+          
+          <!-- Notice Box -->
+          <div class="p-5 rounded-2xl bg-brand-50 border border-brand-200/80 flex items-start gap-4">
+            <span class="material-symbols-rounded text-2xl text-brand-600 shrink-0 mt-0.5">verified_user</span>
+            <div class="space-y-1 text-xs sm:text-sm text-brand-900">
+              <strong class="font-bold text-darktext block text-sm">Resumen de Privacidad en un vistazo:</strong>
+              <p>PetCare está diseñada como una aplicación móvil 100% offline. Sus registros médicos, fotos y notas no se recopilan, no se transmiten ni se almacenan en servidores externos de LemitosDev. Todos sus datos permanecen bajo su exclusivo control en su dispositivo.</p>
+            </div>
+          </div>
+
+          <!-- Section 1 -->
+          <div class="space-y-3">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-darktext flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-sm font-bold flex items-center justify-center">1</span>
+              Información General y Responsable del Tratamiento
+            </h3>
+            <p>
+              La presente Política de Privacidad regula el tratamiento de datos en la aplicación móvil para Android denominada <strong>"PetCare: Control de Mascotas"</strong> (en adelante, la "Aplicación"), identificada en Google Play Store con el nombre de paquete <code>com.lemitosdev.petcare</code>, creada y mantenida por el desarrollador independiente <strong>LemitosDev</strong> (en adelante, el "Desarrollador").
+            </p>
+            <p>
+              Al instalar, abrir o utilizar la Aplicación, el usuario acepta de forma libre, expresa e informada las prácticas descritas en este documento.
+            </p>
+          </div>
+
+          <hr class="border-slate-200" />
+
+          <!-- Section 2 -->
+          <div class="space-y-3">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-darktext flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-sm font-bold flex items-center justify-center">2</span>
+              Almacenamiento 100% Local de Datos (Zero-Knowledge Cloud)
+            </h3>
+            <p>
+              La arquitectura técnica de PetCare se basa en la filosofía de almacenamiento local y soberanía del usuario:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-slate-700">
+              <li>
+                <strong>Naturaleza de los registros:</strong> Toda información ingresada en la Aplicación —incluyendo nombres de mascotas, especies, razas, fechas de nacimiento, peso corporal, registros de vacunas, dosis de medicamentos, desparasitaciones, citas veterinarias, gastos financieros y notas clínicas— se almacena <strong>exclusivamente en la base de datos interna local (SQLite / almacenamiento protegido de la aplicación)</strong> del dispositivo del usuario.
+              </li>
+              <li>
+                <strong>Archivos multimedia y fotos:</strong> Las imágenes de perfil o fotografías de recetas y exámenes médicos que el usuario decida adjuntar permanecen almacenadas en el sistema de archivos local de su teléfono.
+              </li>
+              <li>
+                <strong>Inexistencia de servidores en la nube:</strong> El Desarrollador <strong>no opera, no alquila ni utiliza servidores remotos, bases de datos en la nube ni servicios de sincronización propios</strong> para almacenar o procesar la información de sus mascotas. No tenemos acceso ni capacidad técnica para leer o recuperar su información.
+              </li>
+            </ul>
+          </div>
+
+          <hr class="border-slate-200" />
+
+          <!-- Section 3 -->
+          <div class="space-y-3">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-darktext flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-sm font-bold flex items-center justify-center">3</span>
+              Publicidad de Terceros (Google AdMob) y Financiación Sostenible
+            </h3>
+            <p>
+              PetCare se distribuye bajo un modelo <strong>100% gratuito</strong> sin cuotas de suscripción periódica ni compras dentro de la aplicación (in-app purchases). Para garantizar la sostenibilidad del desarrollo continuo y actualizaciones, la Aplicación integra el kit de desarrollo de software (SDK) oficial de publicidad de Google: <strong>Google Mobile Ads (Google AdMob)</strong>.
+            </p>
+            
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 mt-3">
+              <h4 class="font-bold text-darktext text-sm sm:text-base flex items-center gap-2">
+                <span class="material-symbols-rounded text-brand-600">ad_units</span>
+                Compromiso de Publicidad Respetuosa
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600">
+                A diferencia de aplicaciones saturadas de publicidad, PetCare aplica una política estricta de frecuencia con un <strong>máximo de 1 a 3 anuncios diarios</strong> que se muestran de manera contextual únicamente al realizar acciones clave (por ejemplo, al registrar un evento en el calendario o consultar la configuración). No se reproducen anuncios intrusivos que bloqueen el uso de emergencia de la aplicación.
+              </p>
+            </div>
+
+            <h4 class="font-bold text-darktext text-sm sm:text-base pt-2">Datos recopilados por Google AdMob:</h4>
+            <p>
+              El SDK de Google AdMob puede recopilar y procesar automáticamente cierta información técnica conforme a las políticas de privacidad y condiciones de servicio de Google LLC. Estos datos pueden incluir:
+            </p>
+            <ul class="list-disc pl-6 space-y-1.5 text-xs sm:text-sm text-slate-700">
+              <li>Identificadores publicitarios del dispositivo móvil (Google Advertising ID / GAID).</li>
+              <li>Dirección IP aproximada o truncada (utilizada para geolocalización a nivel de país o ciudad para anuncios relevantes).</li>
+              <li>Datos de diagnóstico de la app y métricas de rendimiento (registros de fallos ANR / crashes).</li>
+              <li>Métricas de interacción publicitaria (impresiones, clics y visualizaciones).</li>
+            </ul>
+            <p class="text-xs sm:text-sm text-slate-500 pt-1">
+              Para conocer en profundidad cómo Google utiliza los datos cuando usted utiliza aplicaciones asociadas, consulte el sitio oficial de Google: 
+              <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline font-medium">Políticas de Privacidad y Términos de Google</a>.
+            </p>
+
+            <div class="bg-[#eff4ff] p-5 rounded-2xl border border-brand-100 space-y-2 mt-3">
+              <h4 class="font-bold text-darktext text-sm sm:text-base flex items-center gap-2">
+                <span class="material-symbols-rounded text-sky-700">shield_lock</span>
+                Consentimiento Europeo (CMP / UMP) para RGPD y ePrivacy
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600">
+                Para los usuarios ubicados en el Espacio Económico Europeo (EEE) y el Reino Unido, la Aplicación implementa la plataforma de mensajería para usuarios de Google (User Messaging Platform - UMP), certificada por el Marco de Transparencia y Consentimiento (TCF) de IAB. El usuario puede revisar, conceder o retirar su consentimiento para anuncios personalizados en cualquier momento accediendo a <strong>Ajustes > Opciones de privacidad de anuncios</strong> dentro de la aplicación.
+              </p>
+            </div>
+          </div>
+
+          <hr class="border-slate-200" />
+
+          <!-- Section 4 -->
+          <div class="space-y-4">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-darktext flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-sm font-bold flex items-center justify-center">4</span>
+              Permisos del Dispositivo Android Justificados
+            </h3>
+            <p>
+              PetCare solicita únicamente los permisos técnicos estrictamente indispensables para brindar sus funcionalidades esenciales de recordatorios y gestión médica:
+            </p>
+
+            <div class="space-y-3">
+              <!-- Permission 1 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-1">
+                <div class="flex items-center justify-between">
+                  <code class="text-xs font-mono font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">POST_NOTIFICATIONS</code>
+                  <span class="text-[11px] font-medium text-slate-500">Android 13+</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 pt-1">
+                  <strong>Finalidad:</strong> Enviar notificaciones visibles en la barra de estado del dispositivo para avisar al usuario sobre dosis de medicamentos programadas, citas veterinarias agendadas y refuerzos de vacunas pendientes.
+                </p>
+              </div>
+
+              <!-- Permission 2 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-1">
+                <div class="flex items-center justify-between">
+                  <code class="text-xs font-mono font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM</code>
+                  <span class="text-[11px] font-medium text-slate-500">AlarmManager de Android</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 pt-1">
+                  <strong>Finalidad:</strong> Disparar recordatorios médicos críticos con precisión al minuto exacto estipulado por el veterinario (ej. antibióticos cada 8 horas), garantizando que suenen incluso cuando la aplicación está cerrada o el teléfono se encuentra en modo de ahorro de energía (Doze mode).
+                </p>
+              </div>
+
+              <!-- Permission 3 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-1">
+                <div class="flex items-center justify-between">
+                  <code class="text-xs font-mono font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">CAMERA (CÁMARA)</code>
+                  <span class="text-[11px] font-medium text-slate-500">Opcional / Por Acción</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 pt-1">
+                  <strong>Finalidad:</strong> Utilizado únicamente si el usuario pulsa activamente sobre el botón de cámara para tomar una fotografía directa del rostro de su mascota o capturar una receta médica en papel. Las fotografías se guardan localmente en el teléfono.
+                </p>
+              </div>
+
+              <!-- Permission 4 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-1">
+                <div class="flex items-center justify-between">
+                  <code class="text-xs font-mono font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">READ_MEDIA_IMAGES / ALMACENAMIENTO</code>
+                  <span class="text-[11px] font-medium text-slate-500">Opcional / Galería</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 pt-1">
+                  <strong>Finalidad:</strong> Permitir al usuario seleccionar una foto existente desde su galería de imágenes para asignarla al perfil de su mascota o a la bóveda de documentos.
+                </p>
+              </div>
+
+              <!-- Permission 5 -->
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-1">
+                <div class="flex items-center justify-between">
+                  <code class="text-xs font-mono font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">INTERNET & ACCESS_NETWORK_STATE</code>
+                  <span class="text-[11px] font-medium text-slate-500">Conectividad de Red</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 pt-1">
+                  <strong>Finalidad:</strong> Utilizado exclusivamente por el SDK de Google Mobile Ads (AdMob) para solicitar y cargar la publicidad respetuosa en pantalla y comprobar la conectividad del dispositivo. La Aplicación <strong>no utiliza el permiso de internet para transmitir ningún dato de sus mascotas a ningún servidor</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <hr class="border-slate-200" />
+
+          <!-- Section 5 -->
+          <div class="space-y-3">
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-darktext flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-sm font-bold flex items-center justify-center">5</span>
+              Control, Portabilidad y Eliminación Total de Datos
+            </h3>
+            <p>
+              Debido a que sus datos se almacenan exclusivamente en su propio teléfono, usted ostenta el control absoluto y definitivo sobre ellos en todo momento:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-slate-700">
+              <li>
+                <strong>Eliminación instantánea:</strong> Puede borrar de manera irreversible todos los datos médicos, mascotas registradas y configuraciones desde la opción <code>Ajustes > Restablecer base de datos</code> en la app, o borrando los datos de almacenamiento desde los ajustes del sistema operativo Android.
+              </li>
+              <li>
+                <strong>Desinstalación:</strong> Al desinstalar la Aplicación de su dispositivo Android, el sistema operativo elimina de forma permanente y automática la base de datos local y todos los archivos asociados.
+              </li>
+              <li>
+                <strong>Exportación manual (Portabilidad):</strong> La app incluye una función en <code>Ajustes > Exportar copia de seguridad</code> que genera un archivo estructurado en formato JSON. Dicho archivo puede ser resguardado por el usuario en su tarjeta SD, computadora o servicio de almacenamiento personal que elija.
+              </li>
+            </ul>
+          </div>
+
+          <hr class="border-slate-200" />
+
+          <!-- Section 6 & 7 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <h3 class="font-display font-bold text-lg text-darktext flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-brand-600 text-white text-xs font-bold flex items-center justify-center">6</span>
+                Protección de Menores
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600">
+                PetCare no está orientada a menores de 13 años (o la edad mínima legal establecida en su país). No recopilamos conscientemente ningún dato personal identificable de menores de edad.
+              </p>
+            </div>
+
+            <div class="space-y-2">
+              <h3 class="font-display font-bold text-lg text-darktext flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-brand-600 text-white text-xs font-bold flex items-center justify-center">7</span>
+                Cambios a esta Política
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600">
+                LemitosDev se reserva el derecho de actualizar esta Política de Privacidad periódicamente para reflejar cambios legales o técnicos. Cualquier modificación será publicada en esta misma página web oficial con la fecha de actualización correspondiente.
+              </p>
+            </div>
+          </div>
+
+          <hr class="border-slate-200" />
+
+          <!-- Section 8: Contact Card inside policy -->
+          <div class="space-y-3 bg-white p-6 rounded-2xl border border-slate-200">
+            <h3 class="font-display font-bold text-xl text-darktext flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-brand-600 text-white text-sm font-bold flex items-center justify-center">8</span>
+              Contacto y Soporte Legal
+            </h3>
+            <p class="text-sm text-slate-600">
+              Si tiene alguna pregunta, consulta sobre privacidad, ejercicio de derechos o sugerencias respecto a esta Política de Privacidad o al funcionamiento de PetCare, puede comunicarse directamente con el desarrollador:
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-4">
+              <div class="flex items-center gap-2 text-sm font-medium text-darktext bg-brand-50/80 px-4 py-2.5 rounded-xl border border-brand-100">
+                <span class="material-symbols-rounded text-brand-600 text-lg">mail</span>
+                <span id="policy-email">contacto@lemitosdev.com</span>
+              </div>
+              <button type="button" onclick="copyToClipboard('contacto@lemitosdev.com', 'Correo de contacto')" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-700 bg-white hover:bg-brand-50 border border-brand-200 px-3.5 py-2 rounded-xl transition-colors">
+                <span class="material-symbols-rounded text-base">content_copy</span>
+                <span>Copiar correo</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq" class="py-20 bg-appbg">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-wider border border-brand-200">
+            <span class="material-symbols-rounded text-sm">help</span>
+            Respuestas Claras
+          </div>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-darktext tracking-tight">
+            Preguntas Frecuentes
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base">
+            Todo lo que necesitas saber sobre el funcionamiento offline, seguridad y respaldo de PetCare.
+          </p>
+        </div>
+
+        <!-- Accordion items -->
+        <div class="space-y-4">
+          
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all shadow-sm">
+            <button type="button" class="faq-toggle w-full p-5 text-left flex items-center justify-between font-display font-bold text-base sm:text-lg text-darktext hover:text-brand-600 transition-colors focus:outline-none">
+              <span>¿La aplicación es 100% gratuita? ¿Hay compras ocultas?</span>
+              <span class="material-symbols-rounded text-brand-600 transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Sí, PetCare es 100% gratuita. No existen suscripciones mensuales ni pagos escondidos para desbloquear funciones. Para mantener el proyecto sostenible, se muestran de 1 a 3 anuncios no invasivos al día provistos por Google AdMob al realizar acciones clave.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all shadow-sm">
+            <button type="button" class="faq-toggle w-full p-5 text-left flex items-center justify-between font-display font-bold text-base sm:text-lg text-darktext hover:text-brand-600 transition-colors focus:outline-none">
+              <span>¿Qué ocurre si cambio de teléfono o pierdo mi dispositivo?</span>
+              <span class="material-symbols-rounded text-brand-600 transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              Como PetCare no almacena tus datos en servidores externos por motivos de privacidad, recomendamos utilizar periódicamente la opción <strong>"Exportar copia de seguridad"</strong> en la pantalla de Ajustes. Esto genera un archivo JSON que puedes guardar en tu cuenta personal de Google Drive o enviar por correo para restaurarlo en tu nuevo teléfono.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all shadow-sm">
+            <button type="button" class="faq-toggle w-full p-5 text-left flex items-center justify-between font-display font-bold text-base sm:text-lg text-darktext hover:text-brand-600 transition-colors focus:outline-none">
+              <span>¿Por qué la app necesita permisos de alarma exacta?</span>
+              <span class="material-symbols-rounded text-brand-600 transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              En Android, los medicamentos y antibióticos requieren precisión horaria estricta. El permiso de alarma exacta permite que tu teléfono dispare la notificación en el minuto previsto, incluso si el dispositivo está en suspensión o modo de ahorro de batería.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all shadow-sm">
+            <button type="button" class="faq-toggle w-full p-5 text-left flex items-center justify-between font-display font-bold text-base sm:text-lg text-darktext hover:text-brand-600 transition-colors focus:outline-none">
+              <span>¿Puedo gestionar varias mascotas a la vez?</span>
+              <span class="material-symbols-rounded text-brand-600 transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              ¡Por supuesto! PetCare permite crear perfiles ilimitados para perros, gatos, conejos y más mascotas. Cada mascota tiene su propio carnet sanitario, registros de peso, medicamentos y documentos independientes.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-all shadow-sm">
+            <button type="button" class="faq-toggle w-full p-5 text-left flex items-center justify-between font-display font-bold text-base sm:text-lg text-darktext hover:text-brand-600 transition-colors focus:outline-none">
+              <span>¿Cómo modifico mis preferencias de publicidad europea (UMP)?</span>
+              <span class="material-symbols-rounded text-brand-600 transition-transform duration-200">expand_more</span>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              En cualquier momento puedes ingresar a <strong>Ajustes > Opciones de privacidad de anuncios</strong> dentro de PetCare. Esto abrirá nuevamente el formulario de consentimiento oficial de Google UMP para que ajustes o revoques los permisos según tu preferencia.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. SECCIÓN DE DESCARGA / CTA FINAL -->
+    <section id="descarga" class="py-20 bg-white border-t border-brand-100">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        
+        <div class="w-16 h-16 rounded-3xl bg-brand-100 text-brand-700 mx-auto flex items-center justify-center shadow-inner">
+          <span class="material-symbols-rounded text-3xl">download_for_offline</span>
+        </div>
+
+        <div class="space-y-3 max-w-2xl mx-auto">
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-darktext tracking-tight">
+            Comienza a cuidar de tus mascotas con total privacidad
+          </h2>
+          <p class="text-base sm:text-lg text-slate-600">
+            Descarga PetCare gratis en Google Play Store. Sin registros, sin suscripciones y listo para usar en segundos.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <!-- Google Play Download Button -->
+          <a href="https://play.google.com/store/apps/details?id=com.lemitosdev.petcare" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 bg-darktext hover:bg-slate-800 text-white px-8 py-4 rounded-2xl shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
+            <svg class="w-7 h-7 fill-current text-brand-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.22 2.22 0 0 1-.61-1.565V3.379c0-.58.22-1.12.61-1.565zm11.3 11.3l2.455 2.455-11.83 6.746 9.375-9.201zm0-2.228L5.534 1.685l11.83 6.746-2.455 2.455zm1.12 1.114l3.52-2.006a1.5 1.5 0 0 1 0 2.61l-3.52 2.006-1.565-1.305 1.565-1.305z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-[11px] uppercase tracking-wider text-slate-300 font-medium">CONSIGUE LA APP EN</div>
+              <div class="text-lg font-bold leading-tight font-display">Google Play Store</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-500 pt-4">
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-emerald-600 text-base">check_circle</span>
+            Sin suscripciones
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-emerald-600 text-base">check_circle</span>
+            100% Offline
+          </span>
+          <span class="flex items-center gap-1.5">
+            <span class="material-symbols-rounded text-emerald-600 text-base">check_circle</span>
+            Respaldos portátiles JSON
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="py-16 bg-[#eff4ff]/60 border-t border-brand-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-brand-800 text-xs font-bold uppercase tracking-wider border border-brand-200">
+          <span class="material-symbols-rounded text-sm">support_agent</span>
+          Soporte y Consultas
+        </div>
+
+        <h3 class="font-display font-bold text-2xl sm:text-3xl text-darktext">
+          ¿Tienes dudas o sugerencias para PetCare?
+        </h3>
+
+        <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
+          En LemitosDev valoramos la experiencia de los cuidadores de mascotas. Escríbenos para sugerir nuevas funciones o reportar cualquier inconveniente.
+        </p>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:contacto@lemitosdev.com" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-6 py-3 rounded-2xl shadow-sm hover:shadow transition-all text-sm">
+            <span class="material-symbols-rounded text-lg">mail</span>
+            <span>contacto@lemitosdev.com</span>
+          </a>
+          <button type="button" onclick="copyToClipboard('contacto@lemitosdev.com', 'Correo')" class="inline-flex items-center gap-1.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-medium px-5 py-3 rounded-2xl shadow-sm text-sm transition-all">
+            <span class="material-symbols-rounded text-base">content_copy</span>
+            <span>Copiar al portapapeles</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-12 text-slate-600 text-xs sm:text-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
+          
+          <!-- Logo & Attribution -->
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xs">
+              <span class="material-symbols-rounded text-base">pets</span>
+            </div>
+            <div>
+              <span class="font-display font-bold text-base text-darktext">PetCare: Control de Mascotas</span>
+              <p class="text-[11px] text-slate-500">Desarrollada por LemitosDev • Package: com.lemitosdev.petcare</p>
+            </div>
+          </div>
+
+          <!-- Footer Links -->
+          <div class="flex flex-wrap items-center justify-center gap-6 font-medium">
+            <a href="#caracteristicas" class="hover:text-brand-600 transition-colors">Características</a>
+            <a href="#seguridad" class="hover:text-brand-600 transition-colors">Seguridad</a>
+            <a href="#privacidad" class="hover:text-brand-600 transition-colors">Políticas de Privacidad</a>
+            <button type="button" onclick="openTermsModal()" class="hover:text-brand-600 transition-colors focus:outline-none">Términos de Servicio</button>
+            <a href="#contacto" class="hover:text-brand-600 transition-colors">Contacto</a>
+          </div>
+
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© 2026 PetCare por LemitosDev. Todos los derechos reservados.</p>
+          <p class="text-center sm:text-right">
+            Aplicación Android nativa para Google Play Store. Diseñada con enfoque de privacidad 100% local.
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- MODAL: TÉRMINOS DE SERVICIO -->
+    <div id="terms-modal" class="fixed inset-0 z-50 hidden bg-darktext/60 backdrop-blur-sm flex items-center justify-center p-4">
+      <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200">
+        
+        <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-appbg">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-rounded text-brand-600 text-xl">description</span>
+            <h3 class="font-display font-bold text-lg text-darktext">Términos y Condiciones de Uso</h3>
+          </div>
+          <button type="button" onclick="closeTermsModal()" class="p-1.5 rounded-xl text-slate-400 hover:text-darktext hover:bg-slate-200 transition-colors" aria-label="Cerrar modal">
+            <span class="material-symbols-rounded">close</span>
+          </button>
+        </div>
+
+        <div class="p-6 overflow-y-auto space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          <p><strong>Última actualización: Septiembre 2026</strong></p>
+          
+          <h4 class="font-bold text-darktext text-sm">1. Aceptación de los Términos</h4>
+          <p>Al descargar o utilizar la aplicación "PetCare: Control de Mascotas" (com.lemitosdev.petcare), desarrollada por LemitosDev, usted acepta estos Términos de Servicio. Si no está de acuerdo con alguna disposición, debe desinstalar la aplicación inmediatamente.</p>
+
+          <h4 class="font-bold text-darktext text-sm">2. Propósito Informativo y No Sustituto Médico Veterinario</h4>
+          <p>PetCare es una herramienta organizativa de asistencia personal para el registro de datos, carnet de vacunación y recordatorios de medicamentos. <strong>La Aplicación no emite diagnósticos médicos ni sustituye la atención, prescripción o consejo de un médico veterinario colegiado.</strong> Ante cualquier anomalía de salud en su mascota, acuda inmediatamente a una clínica veterinaria.</p>
+
+          <h4 class="font-bold text-darktext text-sm">3. Responsabilidad sobre la Custodia de Datos</h4>
+          <p>Dado que la aplicación opera bajo una arquitectura 100% offline y local sin servidores centrales, <strong>el usuario es el único responsable de la preservación y respaldo de su información</strong>. LemitosDev no se hace responsable por la pérdida de registros provocada por el extravío del dispositivo, formateo o desinstalación de la app sin una copia previa de seguridad.</p>
+
+          <h4 class="font-bold text-darktext text-sm">4. Modelo Gratuito y Publicidad</h4>
+          <p>El uso de la aplicación es gratuito y se sostiene mediante la exhibición de anuncios de Google AdMob. El usuario se compromete a no eludir ni manipular los mecanismos de publicidad.</p>
+
+          <h4 class="font-bold text-darktext text-sm">5. Contacto</h4>
+          <p>Para consultas relacionadas con estos Términos, comuníquese a: <code>contacto@lemitosdev.com</code>.</p>
+        </div>
+
+        <div class="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+          <button type="button" onclick="closeTermsModal()" class="bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold px-5 py-2.5 rounded-xl transition-colors">
+            Entendido y Aceptar
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Back to top floating button -->
+    <button id="back-to-top" type="button" class="fixed bottom-6 left-6 z-30 hidden p-3 rounded-2xl bg-white text-brand-700 shadow-float border border-brand-100 hover:bg-brand-50 transition-all duration-300 focus:outline-none" aria-label="Volver arriba">
+      <span class="material-symbols-rounded text-xl">arrow_upward</span>
+    </button>
+
+    <!-- Vanilla JavaScript for Micro-interactions and Tabs -->
+    <script>
+      // 1. Mobile Menu Toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => {
+          const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+          mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+          mobileMenu.classList.toggle('hidden');
+          menuIconOpen.classList.toggle('hidden');
+          menuIconClose.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking any link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            menuIconOpen.classList.remove('hidden');
+            menuIconClose.classList.add('hidden');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // 2. Interactive Phone Mockup Tab Switcher
+      const tabButtons = document.querySelectorAll('.app-tab-btn');
+      const screens = {
+        dashboard: document.getElementById('screen-dashboard'),
+        pets: document.getElementById('screen-pets'),
+        calendar: document.getElementById('screen-calendar'),
+        settings: document.getElementById('screen-settings')
+      };
+      const screenTitle = document.getElementById('screen-title');
+
+      const titles = {
+        dashboard: 'Inicio',
+        pets: 'Mascotas',
+        calendar: 'Calendario',
+        settings: 'Ajustes'
+      };
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+          if (!screens[target]) return;
+
+          // Update active button state
+          tabButtons.forEach(b => {
+            b.classList.remove('text-brand-600');
+            b.classList.add('text-slate-500');
+          });
+          btn.classList.add('text-brand-600');
+          btn.classList.remove('text-slate-500');
+
+          // Toggle screens
+          Object.keys(screens).forEach(key => {
+            if (screens[key]) {
+              screens[key].classList.add('hidden');
+            }
+          });
+          screens[target].classList.remove('hidden');
+
+          if (screenTitle && titles[target]) {
+            screenTitle.textContent = titles[target];
+          }
+        });
+      });
+
+      // 3. FAQ Accordion Interaction
+      const faqToggles = document.querySelectorAll('.faq-toggle');
+      faqToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const content = toggle.nextElementSibling;
+          const icon = toggle.querySelector('.material-symbols-rounded');
+          const isCurrentlyHidden = content.classList.contains('hidden');
+
+          // Close all others
+          document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle .material-symbols-rounded').forEach(i => i.style.transform = 'rotate(0deg)');
+
+          if (isCurrentlyHidden) {
+            content.classList.remove('hidden');
+            if (icon) icon.style.transform = 'rotate(180deg)';
+          }
+        });
+      });
+
+      // 4. Toast and Copy-to-Clipboard Helper
+      function copyToClipboard(text, label = 'Texto') {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(() => {
+            showToast(`¡${label} copiado con éxito!`);
+          }).catch(() => {
+            fallbackCopy(text, label);
+          });
+        } else {
+          fallbackCopy(text, label);
+        }
+      }
+
+      function fallbackCopy(text, label) {
+        const tempInput = document.createElement('textarea');
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        try {
+          document.execCommand('copy');
+          showToast(`¡${label} copiado al portapapeles!`);
+        } catch (err) {
+          showToast(`Seleccione y copie: ${text}`);
+        }
+        document.body.removeChild(tempInput);
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-message');
+        if (!toast || !toastMsg) return;
+
+        toastMsg.textContent = message;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+          toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 3000);
+      }
+
+      // 5. Terms Modal Handling
+      const termsModal = document.getElementById('terms-modal');
+      function openTermsModal() {
+        if (termsModal) termsModal.classList.remove('hidden');
+      }
+      function closeTermsModal() {
+        if (termsModal) termsModal.classList.add('hidden');
+      }
+      if (termsModal) {
+        termsModal.addEventListener('click', (e) => {
+          if (e.target === termsModal) closeTermsModal();
+        });
+      }
+
+      // 6. Back to Top Button
+      const backToTopBtn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+          backToTopBtn.classList.remove('hidden');
+        } else {
+          backToTopBtn.classList.add('hidden');
+        }
+      });
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "PetCare: Control de Mascotas",
+  "description": "Sitio web oficial y políticas de privacidad para la app Android PetCare: Control de Mascotas desarrollada por LemitosDev.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
